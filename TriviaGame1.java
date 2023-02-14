@@ -55,12 +55,12 @@ public class TriviaGame1 {
     System.out.println("Enter username of player two: ");
     username2 = scanner.nextLine();
    user2 =  readFile.userCheck(username2);
-//    System.out.println(user2);
+
    int[] user1Info = getInfo.getCurrentLevel(user1);
-//    System.out.println(user1 + " level is " + user1Info[0] + " and experience is " + user1Info[1]);
+
    
    int[] user2Info = getInfo.getCurrentLevel(user2);
-//    System.out.println(user2 + " level is " + user2Info[0] + " and experience is " + user2Info[1]);
+
 
 
 if(user1Info[0] >= 5 || user2Info[0] >= 5){
@@ -114,7 +114,7 @@ if(user1Info[0] >= 5 || user2Info[0] >= 5){
         e.printStackTrace();
     }
     }
-    else if(user1Info[0] > 6 && user1Info[1] > 6){
+    else if(user1Info[0] > 10 && user1Info[1] > 10){
         try {
 
             Scanner sc = new Scanner(hardFile);
@@ -176,15 +176,18 @@ while(true) {
      playerOnePoints = 0;
      playerTwoPoints = 0;
     user1Info = getInfo.getCurrentLevel(user1);
-           System.out.println(user1 + " level is " + user1Info[0] + " and experience is " + user1Info[1] + " and there are " + user1Info[2] + " stars.");
+           System.out.println(user1 + " you're at level " + user1Info[0] + ", you have " + user1Info[1] + " experience and you have " + user1Info[2] + " stars.\n");
            
            user2Info = getInfo.getCurrentLevel(user2);
-           System.out.println(user2 + " level is " + user2Info[0] + " and experience is " + user2Info[1] +" and there are " + user2Info[2] + " stars.");
-       for (int i = 0; i < 12; i++) {
+           System.out.println(user2 + " you're at level " + user2Info[0] + ", you have " + user2Info[1] +" experience and you have " + user2Info[2] + " stars.");
+       for (int i = 0; i < 10; i++) {
+
+        // randomizes the questions 
         Random random = new Random();
         
         int questionIndex = random.nextInt(questions.size());
 
+        // moves already used questions to remove them from the original list
         while (usedQuestions.contains(questions.get(questionIndex))) {
             questionIndex = random.nextInt(questions.size());
         }
@@ -193,15 +196,16 @@ while(true) {
         usedQuestions.add(questions.get(questionIndex));
 
         
-           // Assign every other question to player one
+    // Assign's every other question to player one
       if (i % 2 == 0) {
           
+        //checks if player one has 3 or more stars to use for 50-50 if not it isn't printed out
             if(user1Info[2] >= 3){
               
                 System.out.println("\nYou have enough stars for 50-50 which removes two incorrect answers \nEnter 50 to use it.");
             }
                System.out.println(user1 +", please answer the following" + " question:\n");
-               
+               // prints the questions
                System.out.println(questions.get(questionIndex).toString());
                String answer = scan.next();
               
@@ -217,16 +221,21 @@ while(true) {
                     else {
                          
                         System.out.println("Sorry, that was incorrect! You have " + playerOnePoints + " point(s).\n");
+                   // if user one has 3 or more stars then they are given the chance to use the stars to retry the question
                         if(user1Info[2] >= 3){
+                            // 
                             while(true){
                             System.out.println("You can retry! It will cost 3 stars \n");
                             System.out.println("Enter S for a second chance or enter any letter to move on.\n");
                             answer = scan.next();
                             if(answer.equalsIgnoreCase("S")){
                                 System.out.println(user1 +", please answer the following" + " question:\n");
+                                //grabs the last question used and prints it out
                                 System.out.println(usedQuestions.get(usedQuestions.size() - 1).toString());
                                 answer = scan.next();
+                                // removes 3 stars from user one
                                 user1Info[2] -= 3;
+                                // grabs the last question and it's answer to check whether it's correct or not
                                 if (answer.equalsIgnoreCase(usedQuestions.get(usedQuestions.size() - 1).getCorrectAnswer())) {
                                     playerOnePoints++;
                                    
@@ -240,7 +249,10 @@ while(true) {
                                     break;
                                 }
                             }
-                            
+                            else{
+                                System.out.println("Moving on...\n");
+                                break;
+                              }
                                 
                             }
                         }
@@ -249,10 +261,15 @@ while(true) {
                      
                         
            
-    
-           else { // Assign every other question to player two
-
+// Assign's every other question to player two
+           else { 
+                //checks if player two has 3 or more stars to use for 50-50 if not it isn't printed out
+                if(user2Info[2] >= 3){
+              
+                    System.out.println("\nYou have enough stars for 50-50 which removes two incorrect answers \nEnter 50 to use it.");
+                }
                System.out.println( user2+ ", please answer the following" + " question:\n");
+                // prints the questions
                System.out.println(questions.get(questionIndex).toString());
                String answer = scan.next();
                
@@ -263,6 +280,7 @@ while(true) {
                 
                } else {
                    System.out.println("Sorry, that was incorrect! You have " + playerTwoPoints + " point(s).\n");
+                   // if user two has 3 or more stars then they are given the chance to use the stars to retry the question
                    if(user2Info[2] >= 3){
                     while(true){
                     System.out.println("You can retry! It will cost 3 stars \n");
@@ -270,9 +288,12 @@ while(true) {
                     answer = scan.next();
                     if(answer.equalsIgnoreCase("S")){
                         System.out.println(user2 +", please answer the following" + " question:\n");
+                         //grabs the last question used and prints it out
                         System.out.println(usedQuestions.get(usedQuestions.size() - 1).toString());
                         answer = scan.next();
+                        // removes 3 stars from user 2
                         user2Info[2] -= 3;
+                         // grabs the last question and it's answer to check whether it's correct or not
                         if (answer.equalsIgnoreCase(usedQuestions.get(usedQuestions.size() - 1).getCorrectAnswer())) {
                             playerTwoPoints++;
                            
@@ -296,8 +317,9 @@ while(true) {
     }
     }
 
+    // decides who wins and prints it out as well as writing to the log.txt file
     String result = "";
-       // Decide who wins
+      
        if (playerOnePoints > playerTwoPoints) {
            System.out.println(user1+ " wins!");
            result += user1 + " wins!";
@@ -325,17 +347,20 @@ while(true) {
             e.getMessage());
     }
 
+// players experience is calculated based on the number of points * 20 and adds the current experience from the file
+
 experience1 = playerOnePoints * 20 + user1Info[1];
 
 experience2 = playerTwoPoints * 20 + user2Info[1];
 
 
 
-
+// updates users information (name, level, experience, stars)
 Update.updateUserInfo(user1, user1Info[0], experience1, user1Info[2]);
 
 Update.updateUserInfo(user2, user2Info[0], experience2, user2Info[2]);
 
+// prints out whether a player levels up or prints out how much experience is still required to get to the next level
 Update.levelUpPrint(user1, user1Info[0], experience1);
 Update.levelUpPrint(user2, user2Info[0], experience2);
 
@@ -343,12 +368,14 @@ Update.levelUpPrint(user2, user2Info[0], experience2);
 
 
 
-
-System.out.println("Do you want to play again?");
-String input = scan.nextLine();
+// if user wants to keep playing they enter yes or any other letter to QUIT and the game then repeats from the beginning
+System.out.println("Do you want to play again? Enter yes or enter any letter to QUIT game.");
+    scan.nextLine();
 if (!scan.nextLine().equalsIgnoreCase("yes")) {
+    System.out.println("QUITING. Come back soon!");
     break;
 }
+
     }   
     }
 }

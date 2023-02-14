@@ -17,7 +17,7 @@ public class readFile {
 
    String returnValue = "";
      if(checkUsername(username) == true){
-      System.out.println("\nWelcome back " + username + "!");
+      System.out.println("\nWelcome back " + username + "!\n");
      returnValue += username;
     
      }
@@ -30,7 +30,7 @@ public class readFile {
           Scanner scanner = new Scanner(System.in); 
           username = scanner.nextLine();
         while (checkUsername(username) == true){
-          System.out.println("The given username is taken \nRetry: ");
+          System.out.println("The given username is taken. \nRetry: ");
           username = scanner.nextLine();
         }
         Print(username);

@@ -1,2 +1,2 @@
-# TriviaGame
-Trivia Game for College
+Title: Trivia Game
+
