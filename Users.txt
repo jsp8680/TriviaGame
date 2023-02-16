@@ -1,3 +1,0 @@
-CensedPower8 7 700 3
-Rex25 7 720 3
-Rex52 1 0 0
