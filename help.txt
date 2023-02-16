@@ -3,7 +3,7 @@ Trivia Game Breakdown:
 The game is quite simple but here are the requirements:
 
 The game is completely created with Java so the only things needed is a:
-- JDK(Java Development Kit)
+- JDK(Java Development Kit) and an IDE
 You can get it from Oracle here: https://www.oracle.com/ca-en/java/technologies/downloads/
 Download the correct one for your OS.
 Then you'll follow the installation instructions. 
@@ -16,16 +16,22 @@ NetBeans Tutorial: https://www3.ntu.edu.sg/home/ehchua/programming/howto/netbean
 
 Eclipse Tutorial: https://www.vogella.com/tutorials/Eclipse/article.html
 
-You can also go to GIT Hub and with this link and run it with Codespaces.
+You can also go to GIT Hub with this link and run it with Codespaces.
 https://github.com/jsp8680/TriviaGame
 
-Codespaces is a much simpler way to run this code without having to download things
+If you click the green <> Code button you can create a workspace with Codespaces that opens up in your browser.
+Codespaces is a much simpler way to run this code without having to download anything.
+You just have to login or sign up to access it.
+You do have to download the extension pack for Java to start the game.
 
+
+To Start: 
+You have to run the Main.java to play the game.
 
 The controls:
 
-a,b,c,d are all used to answer the question. if you put any other option it will be marked as incorrect
-but you may have a second chance if you have more than 3 stars.
+a,b,c,d are all used to answer the question. 
+If you put any other option it will be marked as incorrect but you may have a second chance if you have more than 3 stars.
 
 50 is used to start 50-50.
 S is used to use a second chance.
@@ -36,7 +42,7 @@ If prompted you can enter a certain value like S or yes but you also will be giv
 
 Levels: 
 Are used to gain stars and to move on to more difficult questions after rank 6 you move on to more difficult questions
-and after level 12 you move on to the hardest difficultly which includes both hard questions and normal difficultly questions.
+and after level 12 you move on to the hardest difficultly which includes both hard and normal difficultly questions.
 You have to stop the program at certain intervals to move on to the more difficult questions but all level ups, experience and stars will be saved.
 
 Experience: 
@@ -45,7 +51,7 @@ Points * 20 = experience
 If you win you gain 50 points.
 
 Stars: 
-You earn stars by leveling up each level gives you 3 stars to use for 50-50 or to give you a second chance.
+You earn stars by leveling up, each level gives you 3 stars to use for 50-50 or to give you a second chance.
 
 50-50:
 You can only use 50-50 if you have more than 3 stars.
