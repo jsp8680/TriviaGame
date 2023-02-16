@@ -8,11 +8,6 @@ public class Question {
    private String fourthAnswer;
    private String correctAnswer;
 
-
-
-
-   
-
    /**
    *
    * @param question
@@ -35,7 +30,7 @@ public class Question {
        
    }
 
-   // getter and setter
+  
    public String getQuestion() {
        return question;
    }
@@ -85,24 +80,23 @@ public class Question {
    }
 
 
-   // toString method for print the question
+   // toString method to print the questions
    @Override
    public String toString() {
        return question + "\n" + firstAnswer + "\n" + secondAnswer + "\n" + thirdAnswer + "\n" + fourthAnswer + "\n";
    }
 
- 
+ // toString method to print the the a and b answers
    public String toString2(){
     
-        return question + "\n" + firstAnswer + "\n" + secondAnswer;
+        return  "\n"+ question + "\n" + firstAnswer + "\n" + secondAnswer;
        
     }
   
-    
-   
+ // toString method to print the the c and d answers
    public String toString3(){
   
-         return question + "\n" +thirdAnswer + "\n" + fourthAnswer;
+         return "\n" + question + "\n" +thirdAnswer + "\n" + fourthAnswer;
        
    
    }

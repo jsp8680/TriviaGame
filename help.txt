@@ -1,0 +1,66 @@
+Trivia Game Breakdown:
+
+The game is quite simple but here are the requirements:
+
+The game is completely created with Java so the only things needed is a:
+- JDK(Java Development Kit)
+You can get it from Oracle here: https://www.oracle.com/ca-en/java/technologies/downloads/
+Download the correct one for your OS.
+Then you'll follow the installation instructions. 
+The next step is to decide which IDE you want to use.
+- Some options: Visual Studio Code, NetBeans and Eclipse.
+
+VS Code Tutorial: https://code.visualstudio.com/docs/java/java-tutorial
+
+NetBeans Tutorial: https://www3.ntu.edu.sg/home/ehchua/programming/howto/netbeans_howto.html
+
+Eclipse Tutorial: https://www.vogella.com/tutorials/Eclipse/article.html
+
+You can also go to GIT Hub and with this link and run it with Codespaces.
+https://github.com/jsp8680/TriviaGame
+
+Codespaces is a much simpler way to run this code without having to download things
+
+
+The controls:
+
+a,b,c,d are all used to answer the question. if you put any other option it will be marked as incorrect
+but you may have a second chance if you have more than 3 stars.
+
+50 is used to start 50-50.
+S is used to use a second chance.
+yes is used to continue playing.
+
+If prompted you can enter a certain value like S or yes but you also will be given the option to move on by entering any other letter.
+
+
+Levels: 
+Are used to gain stars and to move on to more difficult questions after rank 6 you move on to more difficult questions
+and after level 12 you move on to the hardest difficultly which includes both hard questions and normal difficultly questions.
+You have to stop the program at certain intervals to move on to the more difficult questions but all level ups, experience and stars will be saved.
+
+Experience: 
+Your experience is based on how many points earned and if you win or not.
+Points * 20 = experience 
+If you win you gain 50 points.
+
+Stars: 
+You earn stars by leveling up each level gives you 3 stars to use for 50-50 or to give you a second chance.
+
+50-50:
+You can only use 50-50 if you have more than 3 stars.
+It takes away two incorrect answers to give you a higher chance of getting it correct.
+You can only use 50-50 before answering not after.
+After using it 3 stars will be removed.
+
+Second Chance: 
+You can only use Second Chance if you have more than 3 stars.
+It gives you a retry after you get a question wrong.
+You can only use it if you are prompted after you get a question wrong.
+After using it 3 stars will be removed.
+
+
+
+
+
+

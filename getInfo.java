@@ -4,11 +4,11 @@ import java.util.Scanner;
 
 public class getInfo {
  
-    
+    //gets the current information from the file
     public static int[] getCurrentLevel(String username) throws FileNotFoundException {
         
 
-  File file = new File("Users.txt");
+        File file = new File("TextFiles\\Users.txt");
         Scanner scanner = new Scanner(file);
         String currentUser = username;
         int[] ans = new int[3];
@@ -16,27 +16,26 @@ public class getInfo {
             String line = scanner.nextLine();
             String[] parts = line.split(" ");
             String user = parts[0];
-            String rank = parts[1];
-            String otherInfo = parts[2];
+            String level = parts[1];
+            String exp = parts[2];
             String stars  = parts[3];
             if (user.equals(currentUser)) {
-                // Store the current user's information in variables
-                int currentRank = Integer.parseInt(rank);
-                // String currentRank = rank;
-                int currentExperience = Integer.parseInt(otherInfo);
-                // String currentExperience = otherInfo;
+                // Store's the current user's information in variables
+                int currentLevel = Integer.parseInt(level);
+                
+                int currentExperience = Integer.parseInt(exp);
+              
                 int currentStars = Integer.parseInt(stars);
                 
-                ans[0] = currentRank;
+                ans[0] = currentLevel;
                 ans[1] = currentExperience;
                 ans[2] = currentStars;
                 
                
-                break;
+                
             }
         }
         scanner.close();
         return ans;
     }
     }
-

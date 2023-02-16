@@ -16,8 +16,9 @@ public class Update {
      * @param stars
      * @throws IOException
      */
+    //updates the information in the file 
     public static void updateUserInfo(String username, int newRank, int newExperience, int stars) throws IOException {
-        File file = new File("Users.txt");
+        File file = new File("TextFiles\\Users.txt");
         List<String> lines = new ArrayList<>();
         int[] t = checkLevel(newRank, newExperience,stars);
 
@@ -31,7 +32,7 @@ public class Update {
                     parts[1] = Integer.toString(t[0]);
                     parts[2] = Integer.toString(t[1]);
                     parts[3] = Integer.toString(t[2]);
-                    // rebuild the line
+                    // rebuilds the line
                     line = parts[0] + " " + parts[1] + " " + parts[2] + " " + parts[3];
                 }
                 lines.add(line);
@@ -55,12 +56,13 @@ public class Update {
     private static int[] checkLevel(int newRank, int newExperience, int stars) {
 
         
-        int[] exp = {0,100,205,310,415,520,625,730,835,940,1045,1150,1255,1360,1465,1570,1675,1780,1885,1990,2095,2200,2305,2410,2515,2620,2725,2830,2935,3500};
+        int[] exp = {0,100,305,510,715,920,1025,1330,1535,1770,1905,2352,2579,2752,2965,3252,3475,3750,4000,4200,4495,4670,4894,5152,5452,5760,6020,6305,6803,7500};
         int star = 3;
         int[] checkLevelArray = new int[3];
         if(newExperience >= exp[newRank]){
             newRank++;
-            stars += star;
+           stars += star;
+        
             checkLevelArray[0] = newRank;
             checkLevelArray[1] = newExperience;
             checkLevelArray[2] = stars;
@@ -74,17 +76,25 @@ public class Update {
       
         return checkLevelArray;
         }
+        /**
+         * @param username
+         * @param newRank
+         * @param newExperience
+         * @return
+         */
+        //prints the level up information on the terminal
         public static int[] levelUpPrint(String username,int newRank, int newExperience) {
 
             int stars = 0;
-            int[] exp = {0,100,205,310,415,520,625,730,835,940,1045,1150,1255,1360,1465,1570,1675,1780,1885,1990,2095,2200,2305,2410,2515,2620,2725,2830,2935,3500};
+            int[] exp = {0,100,305,510,715,920,1025,1330,1535,1770,1905,2352,2579,2752,2965,3252,3475,3750,4000,4200,4495,4670,4894,5152,5452,5760,6020,6305,6803,7500};
             int[] levelUpArray = new int[3];
             if(newExperience >= exp[newRank]){
                 newRank++;
                 levelUpArray[0] = newRank;
                 levelUpArray[1] = newExperience;
-             
                 stars += 3;
+            
+              
                 levelUpArray[2] = stars;
                 System.out.println("\n"+username + " you leveled up to level " + newRank + "\n You also gained " +stars + " stars");
 
@@ -92,7 +102,7 @@ public class Update {
            
             else{
                 int requiredExp = exp[newRank] - newExperience;
-                int nextLevel = newRank  + 1;
+                int nextLevel = newRank + 1;
                 System.out.println("\n"+username + " you have to earn " + requiredExp + " more to get to level " + nextLevel+". \nKeep playing!");
 
                 levelUpArray[0] = newRank;

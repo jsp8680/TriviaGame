@@ -13,6 +13,7 @@ public class readFile {
      * @return
      * @throws IOException
      */
+    // uses checkUsername to determine what is printed out to the terminal 
     public static String userCheck(String username) throws IOException {
 
    String returnValue = "";
@@ -25,12 +26,12 @@ public class readFile {
       {
      
       
-         System.out.println("The given username does not exist");
+         System.out.println("The given username does not exist\n");
          System.out.println("Create a new account: ");
           Scanner scanner = new Scanner(System.in); 
           username = scanner.nextLine();
         while (checkUsername(username) == true){
-          System.out.println("The given username is taken. \nRetry: ");
+          System.out.println("\nThe given username is taken.\nRetry: ");
           username = scanner.nextLine();
         }
         Print(username);
@@ -53,8 +54,9 @@ public class readFile {
        * @return
        * @throws IOException
        */
+      //checks whether a certain username exists or not
       public static boolean checkUsername(String username) throws IOException{
-        File f1=new File("users.txt"); 
+        File f1=new File("TextFiles\\Users.txt"); 
         String[] words=null;  
         FileReader fr = new FileReader(f1); 
         BufferedReader br = new BufferedReader(fr);
@@ -89,11 +91,12 @@ public class readFile {
       /**
        * @param username
        */
+      //prints the new username format (username level exp stars) name 1 0 0 
       public static void Print(String username){
 
           try {
 
-          FileWriter fstream = new FileWriter("users.txt",true);
+          FileWriter fstream = new FileWriter("TextFiles\\Users.txt",true);
           BufferedWriter out = new BufferedWriter(fstream);
           out.write(username + " " + 1 + " " + 0 + " " +0 + "\n");
           out.close();
