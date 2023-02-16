@@ -7,7 +7,9 @@ The game is completely created with Java so the only things needed is a:
 You can get it from Oracle here: https://www.oracle.com/ca-en/java/technologies/downloads/
 Download the correct one for your OS.
 Then you'll follow the installation instructions. 
+
 The next step is to decide which IDE you want to use.
+
 - Some options: Visual Studio Code, NetBeans and Eclipse.
 
 VS Code Tutorial: https://code.visualstudio.com/docs/java/java-tutorial
@@ -20,9 +22,11 @@ You can also go to GIT Hub with this link and run it with Codespaces.
 https://github.com/jsp8680/TriviaGame
 
 If you click the green <> Code button you can create a workspace with Codespaces that opens up in your browser.
-Codespaces is a much simpler way to run this code without having to download anything.
-You just have to login or sign up to access it.
+Codespaces is a much simpler way to run this game as you don't have to download anything.
+You just have to login or sign up to access it on GIT Hub to access it.
 You do have to download the extension pack for Java to start the game.
+
+All IDE's have a run and debug function and clicking it will run the game as long as you start it with the Main.java file.
 
 
 To Start: 
