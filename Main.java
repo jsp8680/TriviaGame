@@ -38,9 +38,9 @@ public class Main {
 
   
        //Finds the file & creates object instances of each question and passes them into an ArrayList
-       File mediumFile = new File("TextFiles\\normalDifficultyQ's.txt");
-       File easyFile = new File("TextFiles\\generalKnowledge.txt");
-       File hardFile = new File("TextFiles\\hardQuestions.txt");
+       File mediumFile = new File("normalDifficultyQ's.txt");
+       File easyFile = new File("generalKnowledge.txt");
+       File hardFile = new File("hardQuestions.txt");
 
     String user2;
    String user1;
@@ -62,11 +62,9 @@ public class Main {
 
   
   int[] user2Info = getInfo.getCurrentLevel(user2);
-int levelForPlayerOne = user1Info[0];
-int levelForPlayerTwo = user2Info[0];
 
-System.out.println(user1  + " is level: "+ user1Info[0]+ " Exp: "+ user1Info[1] + " Stars: " + user1Info[2]);
-System.out.println(user2  + " is level: "+ user2Info[0] + " Exp: "+ user2Info[1] + " Stars: " + user2Info[2]);
+
+
 
 if(user1Info[0] <= 6 || user2Info[0] <= 6 ){
 
@@ -257,8 +255,7 @@ while(true) {
                         // if user 1 has 3 or more stars then 
                         if(user1Info[2]>= 3){
                          int number = Check.checkForCorrectAnswer(questions.get(questionIndex).getCorrectAnswer());
-                         System.out.println(number);
-                         System.out.println(questions.get(questionIndex).getCorrectAnswer());
+                     user1Info[2] -= 3;
                          // if number equals 1 then answer is a/A else number equals 2 and answer is b/B
                          if(number == 1 || number == 2){
                             System.out.println(questions.get(questionIndex).toString2());
@@ -373,9 +370,9 @@ while(true) {
                }     else if(answer.equals("50")){
                 // if user 2 has 3 or more stars then 
                 if(user2Info[2] >= 3){
+                    user2Info[2] -=3 ;
                  int number = Check.checkForCorrectAnswer(questions.get(questionIndex).getCorrectAnswer());
-                 System.out.println(number);
-                 System.out.println(questions.get(questionIndex).getCorrectAnswer());
+                
                  // if number equals 1 then answer is a/A else number equals 2 and answer is b/B
                  if(number == 1 || number == 2){
                     System.out.println(questions.get(questionIndex).toString2());
@@ -520,6 +517,13 @@ Update.levelUpPrint(user1, user1Info[0], experience1);
 
 Update.levelUpPrint(user2, user2Info[0], experience2);
 
+if(user2Info[0] >= 6 && user1Info[0] >= 6){
+    System.out.println("\nYou reached level 6! Remember to quit the game to move on to the more difficult questions.\n");
+}
+
+if(user2Info[0] >= 12 && user1Info[0] >= 12){
+    System.out.println("\nYou reached level 12! Remember to quit the game to move on to the more difficult questions.\n");
+}
 
 
 

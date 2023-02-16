@@ -8,7 +8,7 @@ public class getInfo {
     public static int[] getCurrentLevel(String username) throws FileNotFoundException {
         
 
-        File file = new File("TextFiles\\Users.txt");
+        File file = new File("Users.txt");
         Scanner scanner = new Scanner(file);
         String currentUser = username;
         int[] ans = new int[3];
