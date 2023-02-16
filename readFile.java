@@ -56,7 +56,7 @@ public class readFile {
        */
       //checks whether a certain username exists or not
       public static boolean checkUsername(String username) throws IOException{
-        File f1=new File("TextFiles\\Users.txt"); 
+        File f1=new File("Users.txt"); 
         String[] words=null;  
         FileReader fr = new FileReader(f1); 
         BufferedReader br = new BufferedReader(fr);
@@ -96,7 +96,7 @@ public class readFile {
 
           try {
 
-          FileWriter fstream = new FileWriter("TextFiles\\Users.txt",true);
+          FileWriter fstream = new FileWriter("Users.txt",true);
           BufferedWriter out = new BufferedWriter(fstream);
           out.write(username + " " + 1 + " " + 0 + " " +0 + "\n");
           out.close();

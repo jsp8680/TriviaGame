@@ -18,7 +18,7 @@ public class Update {
      */
     //updates the information in the file 
     public static void updateUserInfo(String username, int newRank, int newExperience, int stars) throws IOException {
-        File file = new File("TextFiles\\Users.txt");
+        File file = new File("Users.txt");
         List<String> lines = new ArrayList<>();
         int[] t = checkLevel(newRank, newExperience,stars);
 

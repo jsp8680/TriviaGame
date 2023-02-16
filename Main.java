@@ -63,6 +63,9 @@ public class Main {
   
   int[] user2Info = getInfo.getCurrentLevel(user2);
 
+// ArrayList<User> users = new ArrayList<User>();
+// users.add(new User(user1, user1Info[0],user1Info[1]));
+// users.add(new User(user2, user2Info[0],user2Info[1]));
 
 
 
@@ -200,6 +203,10 @@ if(user1Info[0] <= 6 || user2Info[0] <= 6 ){
 while(true) {
   
     List<Question> usedQuestions = new ArrayList<>();
+    ArrayList<User> users = new ArrayList<User>();
+users.add(new User(user1, user1Info[0],user1Info[1]));
+users.add(new User(user2, user2Info[0],user2Info[1]));
+
      playerOnePoints = 0;
      playerTwoPoints = 0;
      // is used to update the information about the players after every game until the loop is exited
